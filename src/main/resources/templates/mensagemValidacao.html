@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt_BR">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+<body>
+
+	<div class="row" th:if="${not #strings.isEmpty(mensagem)}">
+		<div class="col s12 m12">
+			<div class="card-panel blue">
+				<span class="white-text" th:text="${mensagem}"></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" th:if="${not #strings.isEmpty(erro)}">
+		<div class="col s12 m12">
+			<div class="card-panel red">
+				<span class="white-text" th:text="${erro}"></span>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

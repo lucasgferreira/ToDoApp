@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt_BR">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>Cadastrar Evento</title>
+</head>
+<body>
+	<th:block th:include="menu"></th:block>
+	<br>
+
+	<div class="container">
+
+		<div class="card-panel">
+			<th:block th:include="mensagemValidacao"></th:block>
+
+			<form method="post">
+				<h3 class="blue-text">Cadastrar Evento</h3>
+				<div class="row">
+					<div class="input-field col s12 m6">
+						<i class="material-icons prefix">account_circle</i> <input
+							id="icon_prefix" type="text" class="validate" name="nome"
+							required maxlength="100"> <label for="icon_prefix">Nome</label>
+					</div>
+					<div class="input-field col s12 m6">
+						<i class="material-icons prefix">place</i> <input id="icon_place"
+							type="text" class="validate" name="local" required
+							maxlength="150"> <label for="icon_place">Local</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6">
+						<i class="material-icons prefix">event</i> <input id="icon_prefix"
+							type="date" class="validate" name="data" required> <label
+							for="icon_prefix">Data</label>
+					</div>
+					<div class="input-field col s12 m6">
+						<i class="material-icons prefix">alarm</i> <input id="icon_alarm"
+							type="time" class="validate" name="horario" required> <label
+							for="icon_alarm">Hora</label>
+					</div>
+				</div>
+				<button type="submit" class="waves-effect waves-light btn blue">
+					<i class="material-icons left">save</i>Salvar
+				</button>
+				<button type="reset" class="waves-effect waves-light btn red">
+					<i class="material-icons left">close</i>Cancelar
+				</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
