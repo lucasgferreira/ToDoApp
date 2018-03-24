@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt_BR">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>TodoApp</title>
+</head>
+<body>
+	<header>
+		<th:block th:include="menu"></th:block>
+
+	</header>
+	<main> <br />
+
+	<div class="container">
+
+		<div th:each="evento : ${eventos}">
+
+			<div class="row">
+				<div class="card">
+
+					<div class="card-content">
+						<a th:href="${evento.codigo}"> <span th:text="${evento.nome}"
+							class="card-title blue-text"></span>
+						</a>
+						<p>
+							Local: <span class="red-text" th:text="${evento.local}"></span>
+						</p>
+						<p>
+							Data: <span class="red-text" th:text="${evento.data}"></span>
+						</p>
+						<p>
+							Horário: <span class="red-text" th:text="${evento.horario}"></span>
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<div class="fixed-action-btn">
+		<a href="/cadastrarEvento"
+			class="btn-floating waves-effect waves-light btn-large red"> <i
+			class="material-icons">add</i>
+		</a>
+	</div>
+	</main>
+
+</body>
+
+</html>
