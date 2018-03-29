@@ -7,13 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+@SuppressWarnings("serial")
 @MappedSuperclass
 public class GenericModel implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
@@ -25,5 +22,4 @@ public class GenericModel implements Serializable {
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
-
 }

@@ -9,14 +9,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-@Entity
-@Table(name = "td_convidado")
-public class Convidado extends GenericModel implements Serializable {
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+@SuppressWarnings("serial")
+@Entity
+@Table(name = "td_convidados")
+public class Convidado extends GenericModel implements Serializable {
 
 	@Column(nullable = false, length = 100)
 	@NotEmpty
@@ -31,6 +30,7 @@ public class Convidado extends GenericModel implements Serializable {
 	private String nome;
 
 	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JoinColumn(nullable = false)
 	private Evento evento;
 

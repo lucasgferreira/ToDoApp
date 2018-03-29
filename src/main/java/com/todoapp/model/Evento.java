@@ -4,17 +4,18 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-@Entity
-@Table(name = "td_evento")
-public class Evento extends GenericModel implements Serializable {
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+@SuppressWarnings("serial")
+@Entity
+@Table(name = "td_eventos")
+public class Evento extends GenericModel implements Serializable {
 
 	@Column(nullable = false, length = 100)
 	@NotEmpty
@@ -31,6 +32,11 @@ public class Evento extends GenericModel implements Serializable {
 	@Column(nullable = false, length = 5)
 	@NotEmpty
 	private String horario;
+
+	@ManyToOne
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	@JoinColumn(nullable = false)
+	private Usuario usuario;
 
 	public String getNome() {
 		return nome;
@@ -62,6 +68,14 @@ public class Evento extends GenericModel implements Serializable {
 
 	public void setHorario(String horario) {
 		this.horario = horario;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 }

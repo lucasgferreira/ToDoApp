@@ -1,54 +1,83 @@
 <!doctype html>
-<html lang="pt_BR">
+<html lang="pt_BR" xmlns:th="http://www.thymeleaf.org">
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 <link type="text/css" rel="stylesheet"
 	href="materialize/css/materialize.min.css" media="screen,projection" />
-
+<link type="text/css" rel="stylesheet" href="css/style.css" />
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-
-
-
-<script defer
-	src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"
-	integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
-	crossorigin="anonymous"></script>
-<script defer
-	src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"
-	integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
-	crossorigin="anonymous"></script>
-
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
+	integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1"
+	crossorigin="anonymous">
 <title>TodoApp</title>
 </head>
 <body>
 	<div th:fragment="menu">
-		<nav>
+		<nav class="grey darken-2 nav-extended">
 			<div class="container">
 				<div class="nav-wrapper">
-					<a href="index.html" th:href="@{/eventos}" class="brand-logo"><i class="fas fa-book"></i>
-						Eventos</a>
+					<a href="index.html" th:href="@{/}" class="brand-logo"><i
+						class="fas fa-book"></i> ToDoApp</a> <a href="#"
+						data-target="slide-out" class="sidenav-trigger"><i
+						class="material-icons">menu</i></a>
+					<ul class="right hide-on-med-and-down">
+						
+						<li><a href="/eventos" th:inline="text"><i
+								class="material-icons left">event</i>Eventos</a></li>
+						<li><a href="/sobre" th:inline="text"><i
+								class="material-icons left">info_outline</i>Sobre</a></li>
+						<li><div class="divider"></div></li>
+						<li><a href="/logout" th:inline="text"><i
+								class="material-icons left">exit_to_app</i>Sair</a></li>
+					</ul>
 				</div>
 			</div>
-
 		</nav>
-
+		<ul id="slide-out" class="sidenav">
+			<li><div class="user-view">
+					<div class="background">
+						<img class="materialboxed" width="300"
+							src="images/user_background.jpg">
+					</div>
+					<a href="#user"><i class="material-icons white-text"
+						style="font-size: 50px;">account_box</i></a> <a href="#name"><span
+						class="white-text name" sec:authentication="name"></span></a>
+				</div></li>
+			<li><a href="/eventos" th:inline="text"><i
+					class="material-icons">event</i>Eventos</a></li>
+			<li><a href="/sobre" th:inline="text"><i
+					class="material-icons">info_outline</i>Sobre</a></li>
+			<li><div class="divider"></div></li>
+			<li><a href="/logout" th:inline="text"><i
+					class="material-icons">exit_to_app</i>Sair</a></li>
+		</ul>
 	</div>
-
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
-
 	<!--JavaScript at end of body for optimized loading-->
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	<script defer
+		src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"
+		integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+		crossorigin="anonymous"></script>
+	<script defer
+		src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"
+		integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+		crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.sidenav').sidenav();
+		});
+	</script>
 </body>
-
 </html>

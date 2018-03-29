@@ -18,11 +18,11 @@
 		<div class="card-panel">
 			<th:block th:include="mensagemValidacao"></th:block>
 
-			<form method="post">
-				<h3 class="blue-text">Cadastrar Evento</h3>
+			<form method="post" th:action="@{/cadastrarEvento}">
+				<h5 class="blue-text">Cadastrar Evento</h5>
 				<div class="row">
 					<div class="input-field col s12 m6">
-						<i class="material-icons prefix">account_circle</i> <input
+						<i class="material-icons prefix">event_note</i> <input
 							id="icon_prefix" type="text" class="validate" name="nome"
 							required maxlength="100"> <label for="icon_prefix">Nome</label>
 					</div>
@@ -39,17 +39,17 @@
 							for="icon_prefix">Data</label>
 					</div>
 					<div class="input-field col s12 m6">
-						<i class="material-icons prefix">alarm</i> <input id="icon_alarm"
+						<i class="material-icons prefix">access_time</i> <input id="icon_alarm"
 							type="time" class="validate" name="horario" required> <label
 							for="icon_alarm">Hora</label>
 					</div>
 				</div>
-				<button type="submit" class="waves-effect waves-light btn blue">
+				<button type="submit" class="waves-effect waves-light btn blue btn-small">
 					<i class="material-icons left">save</i>Salvar
 				</button>
-				<button type="reset" class="waves-effect waves-light btn red">
+				<a th:href="@{/eventos}" class="waves-effect waves-light btn red btn-small">
 					<i class="material-icons left">close</i>Cancelar
-				</button>
+				</a>
 			</form>
 		</div>
 	</div>

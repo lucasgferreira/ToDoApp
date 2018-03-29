@@ -24,6 +24,20 @@
 			</div>
 		</div>
 	</div>
+	<div class="row" th:if="${param.error}">
+		<div class="col s12 m12">
+			<div class="card-panel red">
+				<span class="white-text">Usuário ou senha inválidos!</span>
+			</div>
+		</div>
+	</div>
+	<div class="row" th:if="${param.logaut}">
+		<div class="col s12 m12">
+			<div class="card-panel red">
+				<span class="white-text">Logaut</span>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
