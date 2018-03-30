@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers("/", "/index", "/cadastrarUsuario")
+		.antMatchers("/", "/cadastrarUsuario")
 			.permitAll()
 		.anyRequest()
 			.authenticated()
@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/materialize/**", "/css/**", "/js/**");
+		web.ignoring().antMatchers("/materialize/**", "/css/**", "/js/**", "/images/**");
 	}
 	
 	@Override

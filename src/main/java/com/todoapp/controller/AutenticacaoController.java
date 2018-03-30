@@ -51,7 +51,7 @@ public class AutenticacaoController {
 					usuario.setSenha(hash.toHex());
 					List<Role> roles = new ArrayList<Role>();
 					Role role = new Role();
-					role = rr.findByRole("ROLE_ADMIN");
+					role = rr.findByRole("ROLE_USER");
 					roles.add(role);
 					usuario.setRoles(roles);
 					ur.save(usuario);
