@@ -1,4 +1,4 @@
-package com.todoapp;
+package com.todoapp.data;
 
 import javax.sql.DataSource;
 

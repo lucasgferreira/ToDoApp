@@ -1,4 +1,4 @@
-package com.todoapp;
+package com.todoapp.data;
 
 import java.net.URI;
 import java.net.URISyntaxException;
