@@ -1,5 +1,3 @@
-
-
 # ToDoApp
 ### Sistema de gerenciamento de eventos e agendas
 [Demo da aplicação](https://todoapp-lucasgferreira.herokuapp.com/)
@@ -21,6 +19,8 @@
 >  - Hibernate
 >  - MySql
 >  - Spring Boot
+>  - MaterializeCSS - http://materializecss.com/
+>  - Heroku - https://www.heroku.com/
 ----------
 ### Tutorial
 
