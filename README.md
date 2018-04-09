@@ -1,4 +1,5 @@
 
+
 # ToDoApp
 ### Sistema de gerenciamento de eventos e agendas
 [Demo da aplicação](https://todoapp-lucasgferreira.herokuapp.com/)
@@ -16,7 +17,7 @@
 
 ### Tecnologias
   
->  - Java JSF  
+>  - Java JSP 
 >  - Hibernate
 >  - MySql
 >  - Spring Boot
